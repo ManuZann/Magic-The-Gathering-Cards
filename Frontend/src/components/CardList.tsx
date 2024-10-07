@@ -2,6 +2,7 @@ import { useState, useEffect } from 'preact/hooks';
 import Card from './Card';
 import Modal from './ModalCard';
 import { CardModel } from '../utilities/Card.model';
+import { MagicMotion } from 'react-magic-motion';
 // import { Link } from 'react-router-dom';
 
 const CardList = () => {
@@ -99,13 +100,15 @@ const CardList = () => {
                 </button> */}
                 
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                {data.cards.map((card: CardModel) => (
-                    <div key={card.id} onClick={() => openModal(card)} className="cursor-pointer">
-                        <Card id={card.id} name={card.name} imageUrl={card.imageUrl} />
-                    </div>
-                ))}
-            </div>
+            <MagicMotion>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    {data.cards.map((card: CardModel) => (
+                        <div key={card.id} onClick={() => openModal(card)} className="cursor-pointer">
+                            <Card id={card.id} name={card.name} imageUrl={card.imageUrl} />
+                        </div>
+                    ))}
+                </div>
+            </MagicMotion>
             <div className="mt-4 mb-3 flex items-center justify-center">
                 <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
                     Anterior
