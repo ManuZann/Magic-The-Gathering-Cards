@@ -39,3 +39,11 @@ Ejecuta la aplicacion:
 ```
   npm run dev
 ```
+
+## API Reference
+
+#### Para informacion sobre los Endpoints
+
+```http
+  /api-docs/
+```
