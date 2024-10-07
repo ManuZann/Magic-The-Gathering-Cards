@@ -9,6 +9,8 @@ interface ModalProps {
 
 const Modal = ({ card, isOpen, onClose }: ModalProps) => {
     const navigate = useNavigate()
+    const apiUrl = import.meta.env.VITE_API_URL
+
     if (!isOpen || !card) return null;
 
     const handleEdit = () => {
@@ -18,7 +20,7 @@ const Modal = ({ card, isOpen, onClose }: ModalProps) => {
     const handleDelete = async () => {
         if (card?._id) {
             try {
-                await fetch(`http://localhost:3000/api/cards/${card._id}`, {
+                await fetch(`${apiUrl}/api/cards/${card._id}`, {
                     method: 'DELETE',
                 });
                 onClose();

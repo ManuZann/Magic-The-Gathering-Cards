@@ -15,8 +15,9 @@ const CardList = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
     const fetchCards = async () => {
+        const apiUrl = import.meta.env.VITE_API_URL  
         try {
-            const response = await fetch(`http://localhost:3000/api/cards/?page=${currentPage}&limit=${cardsPerPage}&name=${searchTerm}&rarity=${rarityFilter}`)
+            const response = await fetch(`${apiUrl}/api/cards/?page=${currentPage}&limit=${cardsPerPage}&name=${searchTerm}&rarity=${rarityFilter}`)
             const fetdata = await response.json()
             setData(fetdata)
         } catch (error) {

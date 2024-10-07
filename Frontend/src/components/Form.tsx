@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { CardModel } from "../utilities/Card.model";
 import { useNavigate, useParams } from "react-router-dom";
 import ModalForm from "./ModalForm";
+const apiUrl = import.meta.env.VITE_API_URL
 
 
 const CardForm = () => {
@@ -22,7 +23,7 @@ const CardForm = () => {
 
     useEffect(() => {
         const fetchCard = async () => {
-            const response = await fetch(`http://localhost:3000/api/cards/${_id}`);
+            const response = await fetch(`${apiUrl}/api/cards/${_id}`);
             const data = await response.json();
             if (data) {
                 setCard(data);
@@ -62,10 +63,10 @@ const CardForm = () => {
             toughness,
             type,
         };
-
+        
         try {
             const method = card ? 'PUT' : 'POST';
-            const url = card ? `http://localhost:3000/api/cards/${_id}` : 'http://localhost:3000/api/cards/';
+            const url = card ? `${apiUrl}/api/cards/${_id}` : `${apiUrl}/api/cards/`;
             const response = await fetch(url, {
                 method: method,
                 headers: {
