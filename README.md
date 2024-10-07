@@ -4,6 +4,7 @@
 Aplicacion para CRUD con cartas de Magic.
 
 ## Frontend
+[Despliegue Frontend](https://magic-the-gathering-cards.netlify.app)
 
 Instalacion y configuracion:
 
@@ -22,6 +23,8 @@ Ejecuta la aplicacion:
 ```
 
 ## Backend
+
+[Despliegue Backend](https://magic-the-gathering-cards-production.up.railway.app/api-docs/)
 
 Instalacion y configuracion:
 
