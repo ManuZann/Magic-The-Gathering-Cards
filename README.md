@@ -2,6 +2,11 @@
 ## Magic The Gathering API
 
 Aplicacion para CRUD con cartas de Magic.
+En esta aplicacion vas a poder:
+- Visualizar la totalidad de Cartas.
+- Agregar nuevas cartas personalizadas. Para la imagen recomendamos este [Generador](https://www.mtgcardmaker.com).
+- Modificar las cartas ya existentes, o las nuevas personalizadas.
+- Eliminar las cartas que ya no quieras visualizar.
 
 ## Frontend
 [Despliegue Frontend](https://magic-the-gathering-cards.netlify.app)
