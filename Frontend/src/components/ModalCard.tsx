@@ -37,16 +37,16 @@ const Modal = ({ card, isOpen, onClose }: ModalProps) => {
                     <img src={card.imageUrl} alt={card.name} className="w-64 h-80 object-cover rounded-md" />
                 </div>
                 <div className="ml-8 text-white pl-10">
-                    <h2 className="text-3xl font-bold">{card.name}</h2>
+                    <h2 className="text-3xl font-bold">{card.name} ({card.set})</h2>
                     <p className="mt-4"><strong>Rareza:</strong> {card.rarity}</p>
                     <p className="mt-2"><strong>Costo de maná:</strong> {card.manaCost || 'N/A'}</p>
                     <p className="mt-2"><strong>Tipo:</strong> {card.type || 'N/A'}</p>
-                    <p className="mt-2"><strong>Set:</strong> {card.set || 'N/A'}</p>
                     <div className="mt-2">
                         <p className="inline"><strong>Poder:</strong> {card.power || 'N/A'}</p>
                         <span className="mx-2"> |</span>
                         <p className="inline"><strong>Tenacidad:</strong> {card.toughness || 'N/A'}</p>
                     </div>
+                    <p className="mt-2">{card.text}</p>
                     <div className="mt-10">
                         <button onClick={handleEdit} className="text-white mx-4 py-2 px-4 rounded">
                             Editar Carta
